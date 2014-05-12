@@ -1,0 +1,17 @@
+.dragContainer {
+	margin-top: 100px;
+	background-color: #ccc;
+
+	#dragElement {
+		background-color: red;
+		width: 100px;
+		height: 100px;
+	}
+
+	#dropElement {
+		background-color: #1e1e1e;
+		width: 200px;
+		height: 200px;
+		border: 1px solid blue;
+	}
+}

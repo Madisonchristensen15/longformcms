@@ -22,6 +22,9 @@ init = ->
         e.preventDefault()
         save()
 
+    $("#dragElement").on "dragstart", (e) ->
+        drag(e)
+
 save = ->
     objectArr = []
 
@@ -38,6 +41,9 @@ save = ->
     jsonstring = JSON.stringify(objectArr)
 
     $("#jsonOutput").html(jsonstring)
+
+drag = (evt) ->
+    console.log evt.target.id
 
 
 `export default init`
