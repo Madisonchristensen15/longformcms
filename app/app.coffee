@@ -22,8 +22,14 @@ init = ->
         e.preventDefault()
         save()
 
-    $("#dragElement").on "dragstart", (e) ->
-        drag(e)
+    $("#thumbnailWrapper, #templateWrapper").sortable(
+        connectWith: ".connectedSortable"
+        helper: "clone"
+    ).disableSelection()
+
+    $("#templateWrapper").sortable
+        receive: (e, ui) ->
+            ui.item.addClass( "templateElement", 500);
 
 save = ->
     objectArr = []
@@ -41,9 +47,6 @@ save = ->
     jsonstring = JSON.stringify(objectArr)
 
     $("#jsonOutput").html(jsonstring)
-
-drag = (evt) ->
-    console.log evt.target.id
 
 
 `export default init`
