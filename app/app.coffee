@@ -22,14 +22,14 @@ init = ->
         e.preventDefault()
         save()
 
-    $("#thumbnailWrapper, #templateWrapper").sortable(
-        connectWith: ".connectedSortable"
+    $("#thumbnailWrapper div").draggable
         helper: "clone"
-    ).disableSelection()
+        connectToSortable: "#templateWrapper"
 
-    $("#templateWrapper").sortable
-        receive: (e, ui) ->
-            ui.item.addClass( "templateElement", 500);
+    $("#templateWrapper").droppable(
+        drop: (e, ui) ->
+            ui.draggable.addClass( "templateElement", 500);
+    ).sortable()
 
 save = ->
     objectArr = []
