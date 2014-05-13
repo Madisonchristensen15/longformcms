@@ -6,6 +6,8 @@
 `import applicationTemplate from "app/templates/application"`
 `import dashboardTemplate from "app/templates/dashboard"`
 
+`import textTemplate from "app/templates/text"`
+
 init = ->
     # Replaces clicks with touchevents to remove 300ms delay (for non-IE)
     # FastClick.attach document.body
@@ -26,10 +28,11 @@ init = ->
         helper: "clone"
         connectToSortable: "#templateWrapper"
 
-    $("#templateWrapper").droppable(
-        drop: (e, ui) ->
-            ui.draggable.addClass( "templateElement", 500);
-    ).sortable()
+    $("#templateWrapper").droppable().sortable
+        receive: (e, ui) ->
+            $(this).data().uiSortable.currentItem.html(textTemplate())
+            $(this).data().uiSortable.currentItem.addClass("dummyClass", 700, "swing")
+            afterDrop()
 
 save = ->
     objectArr = []
@@ -48,5 +51,7 @@ save = ->
 
     $("#jsonOutput").html(jsonstring)
 
+afterDrop = ->
+    # $("#templateWrapper").append textTemplate()
 
 `export default init`
