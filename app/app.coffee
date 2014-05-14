@@ -21,62 +21,6 @@ init = ->
     # $("#viewport").insertAdjacentHTML "beforeend", headerTemplate()
     # $("#viewport").insertAdjacentHTML "beforeend", frontTemplate(context)
 
-    bigImage =
-        type:"object"
-        properties:
-            url:
-                type: "string"
-                href: "{{self}}"
-            imageHeader:
-                title: "Image Header"
-                type: "object"
-                properties:
-                    title:
-                        title: "Title"
-                        type: "string"
-                        format: "textarea"
-                    subtitle:
-                        title: "Subtitle"
-                        type: "string"
-                        format: "textarea"
-                    text:
-                        title: "Text"
-                        type: "string"
-                        format: "textarea"
-                    text_color:
-                        title: "Text Color"
-                        type: "string"
-                        enum: [
-                            "white"
-                            "black"
-                        ]
-                    text_shadow:
-                        title: "Text Shadow"
-                        type: "string"
-                        enum: [
-                            "None"
-                            "textShadow"
-                        ]
-                    text_position:
-                        title: "Text Position"
-                        type: "string"
-                        enum: [
-                            "left"
-                            "right"
-                        ]
-                    animationType:
-                        title: "Animation Type"
-                        type: "string"
-                        enum: [
-                            "slideDown"
-                            "slideUp"
-                            "slideUpSlow"
-                            "fade"
-                            "fade01"
-                            "fade02"
-                            "scale"
-                        ]
-
     $("#action").click (e) ->
         e.preventDefault()
         save()
@@ -118,13 +62,6 @@ afterDrop = (dragElement, sortElement, schema) ->
     switch dragElement.attr "id"
         when "i1"
             sortElement.html(textTemplate())
-
-            # element = document.getElementById "text"
-
-            # editor = new JSONEditor(element, 
-            #     theme: "html"
-            #     schema: schema
-            # )
         when "i2"
             sortElement.html(quoteTemplate())
 
