@@ -1,0 +1,16 @@
+<section class="textWithVideo">
+    <div class="grid grid-pad">
+        {{#each video}}
+            <div class="{{video_position}} {{video_width}}" {{animation}}>
+                <iframe width="100%" height="221px" src="http://www.youtube.com/embed/{{youtube_id}}" 
+                frameborder="0" allowfullscreen></iframe>
+                {{#with caption}}
+                    <div class="caption">
+                        <h4>{{caption_title}}</h4>
+                        <p>{{caption_text}}</p>
+                    </div>
+                {{/with}}
+            </div>
+        {{/each}}
+    </div>
+</section>

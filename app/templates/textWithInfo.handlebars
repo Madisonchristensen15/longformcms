@@ -1,0 +1,26 @@
+<section class="textWithInfo">
+    <div class="grid grid-pad">
+        {{#with info}}
+            <div class="infoElement {{info_width}} {{info_position}}">
+                {{#each images}}
+                    <div class="image {{image_position}} {{image_width}}" {{animation}}>
+                        <img src="{{url}}" width="100%">
+
+                        {{#with caption}}
+                            <div class="caption">
+                                <h4>{{caption_title}}</h4>
+                                <p>{{caption_text}}</p>
+                            </div>
+                        {{/with}}
+                    </div>
+                {{/each}}
+
+                {{#each infos}}            
+                    <h4 class="infoTitle">{{info_title}}</h4>
+                    <h5 class="infoSubtitle">{{info_subtitle}}</h5>
+                    <p>{{info_content}}</p>
+                {{/each}}
+            </div>
+        {{/with}}
+    </div>
+</section>

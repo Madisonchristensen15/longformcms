@@ -7,3 +7,26 @@
         <br>
     </form>
 </div> --}}
+<section class="text bg">
+
+    <div class="grid grid-pad">
+
+        <div class="col-12-12">
+            <h2>{{title}}</h2>
+        </div>
+
+        <div class="clear"></div>
+
+        {{#if text_position}}
+            <div class="textElement {{text_width}} {{border_position}} {{text_position}}">
+        {{else}}
+            <div class="textElement {{text_width}} {{border_position}} col-12-12">
+        {{/if}}
+            <h4>{{subtitle}}</h4>
+            <p>
+                {{{text}}}
+            </p>
+        </div>
+    </div>
+
+</section>
