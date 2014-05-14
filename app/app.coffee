@@ -7,6 +7,7 @@
 `import dashboardTemplate from "app/templates/dashboard"`
 
 `import textTemplate from "app/templates/text"`
+`import quoteTemplate from "app/templates/quote"`
 
 init = ->
     # Replaces clicks with touchevents to remove 300ms delay (for non-IE)
@@ -25,14 +26,19 @@ init = ->
         save()
 
     $("#thumbnailWrapper div").draggable
-        helper: "clone"
+        helper: ->
+            helper = $(this).clone()
+            helper.css
+                width: "200px"
+                height: "90px"
         connectToSortable: "#templateWrapper"
 
     $("#templateWrapper").droppable().sortable
+        placeholder: "placeholder"
+
         receive: (e, ui) ->
-            $(this).data().uiSortable.currentItem.html(textTemplate())
-            $(this).data().uiSortable.currentItem.addClass("dummyClass", 700, "swing")
-            afterDrop()
+            console.log ui.item.attr "id"
+            afterDrop(ui.item, $(this).data().uiSortable.currentItem)
 
 save = ->
     objectArr = []
@@ -51,7 +57,14 @@ save = ->
 
     $("#jsonOutput").html(jsonstring)
 
-afterDrop = ->
-    # $("#templateWrapper").append textTemplate()
+afterDrop = (dragElement, sortElement) ->
+
+    switch dragElement.attr "id"
+        when "i1"
+            sortElement.html(textTemplate())
+        when "i2"
+            sortElement.html(quoteTemplate())
+
+    sortElement.addClass("dummyClass", 700, "swing") 
 
 `export default init`

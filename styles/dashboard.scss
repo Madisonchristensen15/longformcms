@@ -23,6 +23,7 @@
 		#templateWrapper {
 			margin: 0 auto;
 			width: 600px;
+			min-height: 50px;
 
 			.templateElement {
 				width: 100%;
@@ -40,5 +41,11 @@
 				opacity: 1;
 			}
 		}
+	}
+
+	.placeholder {
+		height: 50px;
+		background-color: #ccc;
+		border: 1px dashed #000
 	}
 }
