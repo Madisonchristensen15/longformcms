@@ -44,7 +44,8 @@ appJs = compileES6(mergeTrees([app, bower]), {
     legacyFilesToAppend: [
         "fastclick/lib/fastclick.js",
         "handlebars/handlebars.js",
-        "jQuery/jquery.js"
+        "jQuery/jquery.js",
+        "json-editor/dist/jsoneditor.js"
     ],
     wrapInEval: false,
     outputFile: "/assets/app.js"

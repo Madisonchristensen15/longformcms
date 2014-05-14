@@ -21,6 +21,62 @@ init = ->
     # $("#viewport").insertAdjacentHTML "beforeend", headerTemplate()
     # $("#viewport").insertAdjacentHTML "beforeend", frontTemplate(context)
 
+    bigImage =
+        type:"object"
+        properties:
+            url:
+                type: "string"
+                href: "{{self}}"
+            imageHeader:
+                title: "Image Header"
+                type: "object"
+                properties:
+                    title:
+                        title: "Title"
+                        type: "string"
+                        format: "textarea"
+                    subtitle:
+                        title: "Subtitle"
+                        type: "string"
+                        format: "textarea"
+                    text:
+                        title: "Text"
+                        type: "string"
+                        format: "textarea"
+                    text_color:
+                        title: "Text Color"
+                        type: "string"
+                        enum: [
+                            "white"
+                            "black"
+                        ]
+                    text_shadow:
+                        title: "Text Shadow"
+                        type: "string"
+                        enum: [
+                            "None"
+                            "textShadow"
+                        ]
+                    text_position:
+                        title: "Text Position"
+                        type: "string"
+                        enum: [
+                            "left"
+                            "right"
+                        ]
+                    animationType:
+                        title: "Animation Type"
+                        type: "string"
+                        enum: [
+                            "slideDown"
+                            "slideUp"
+                            "slideUpSlow"
+                            "fade"
+                            "fade01"
+                            "fade02"
+                            "scale"
+                        ]
+
     $("#action").click (e) ->
         e.preventDefault()
         save()
@@ -38,7 +94,7 @@ init = ->
 
         receive: (e, ui) ->
             console.log ui.item.attr "id"
-            afterDrop(ui.item, $(this).data().uiSortable.currentItem)
+            mimi = afterDrop(ui.item, $(this).data().uiSortable.currentItem, bigImage)
 
 save = ->
     objectArr = []
@@ -57,14 +113,29 @@ save = ->
 
     $("#jsonOutput").html(jsonstring)
 
-afterDrop = (dragElement, sortElement) ->
+afterDrop = (dragElement, sortElement, schema) ->
 
     switch dragElement.attr "id"
         when "i1"
             sortElement.html(textTemplate())
+
+            # element = document.getElementById "text"
+
+            # editor = new JSONEditor(element, 
+            #     theme: "html"
+            #     schema: schema
+            # )
         when "i2"
             sortElement.html(quoteTemplate())
 
-    sortElement.addClass("dummyClass", 700, "swing") 
+    sortElement.addClass("dummyClass", 700, "swing")
+
+    editor = sortElement.jsoneditor
+        schema: schema
+        theme: "html"
+
+    editor.addClass "templateElement"
+
+    return editor
 
 `export default init`
