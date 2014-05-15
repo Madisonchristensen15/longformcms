@@ -66,7 +66,6 @@ text =
         images:
             title: "Images"
             type: "array"
-            format: "table"
             uniqueItems: true
             items:
                 title: "Image"
@@ -122,12 +121,19 @@ text =
                             "fade01"
                             "fade02"
                             "scale"
-                        ]               
-                    
+                        ]
+            default: [
+                url: "URL"
+                image_position: "left"
+                image_width: "col-4-12"
+                caption:
+                    caption_title: "Caption Title"
+                    caption_text: "Caption Text"
+                animationType: "slideDown"
+            ]
         videos:
             title: "Videos"
             type: "array"
-            format: "table"
             uniqueItems: true
             items:
                 type: "object"
@@ -147,48 +153,56 @@ text =
                                 title: "Caption Text"
                                 type: "string"
                                 format:"textarea"
-                            video_position:
-                                title: "Video Position"
-                                type: "string"
-                                enum: [
-                                    "left"
-                                    "center"
-                                    "right"
-                                ]
-                            video_width:
-                                title: "Video Width"
-                                type: "string"
-                                enum: [
-                                    "col-1-12"
-                                    "col-2-12"
-                                    "col-3-12"
-                                    "col-4-12"
-                                    "col-5-12"
-                                    "col-6-12"
-                                    "col-7-12"
-                                    "col-8-12"
-                                    "col-9-12"
-                                    "col-10-12"
-                                    "col-11-12"
-                                    "col-12-12"
-                                ]
-                            animationType:
-                                title: "Animation Type"
-                                type: "string"
-                                enum: [
-                                    "slideDown"
-                                    "slideUp"
-                                    "slideUpSlow"
-                                    "fade"
-                                    "fade01"
-                                    "fade02"
-                                    "scale"
-                                ]
+                    video_position:
+                        title: "Video Position"
+                        type: "string"
+                        enum: [
+                            "left"
+                            "center"
+                            "right"
+                        ]
+                    video_width:
+                        title: "Video Width"
+                        type: "string"
+                        enum: [
+                            "col-1-12"
+                            "col-2-12"
+                            "col-3-12"
+                            "col-4-12"
+                            "col-5-12"
+                            "col-6-12"
+                            "col-7-12"
+                            "col-8-12"
+                            "col-9-12"
+                            "col-10-12"
+                            "col-11-12"
+                            "col-12-12"
+                        ]
+                    animationType:
+                        title: "Animation Type"
+                        type: "string"
+                        enum: [
+                            "slideDown"
+                            "slideUp"
+                            "slideUpSlow"
+                            "fade"
+                            "fade01"
+                            "fade02"
+                            "scale"
+                        ]
+            default: [
+                youtube_id: "URL"
+                video_position: "left"
+                video_width: "col-4-12"
+                caption:
+                    caption_title: "Caption Title"
+                    caption_text: "Caption Text"
+                animationType: "slideDown"
+            ]
 
         infos:
             title: "Info"
             type: "array"
-            format: "table"
             uniqueItems: true
             items:
                 type: "object"
@@ -205,6 +219,23 @@ text =
                             "center"
                             "right"
                         ]
+                    info_width:
+                        title: "Info Width"
+                        type: "string"
+                        enum: [
+                            "col-1-12"
+                            "col-2-12"
+                            "col-3-12"
+                            "col-4-12"
+                            "col-5-12"
+                            "col-6-12"
+                            "col-7-12"
+                            "col-8-12"
+                            "col-9-12"
+                            "col-10-12"
+                            "col-11-12"
+                            "col-12-12"
+                        ]
                     info_image:
                         title: "Info Image"
                         type: "string"
@@ -212,12 +243,17 @@ text =
                     info_title:
                         title: "Info Title"
                         type: "string"
-                        format: "textarea"
                     info_subtitle:
                         title: "Info Subtitle"
                         type: "string"
-                        format:"textarea"
                     info_content:
                         title: "Info Content"
                         type: "string"
                         format:"textarea"
+            default: [
+                url: "URL"
+                info_position: "left"
+                info_width: "col-4-12"
+                info_title: "Info Title"
+                info_content: "Info Text"
+            ]

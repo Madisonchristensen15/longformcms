@@ -69,7 +69,10 @@ afterDrop = (dragElement, sortElement, schema) ->
 
     editor = sortElement.jsoneditor
         schema: schema
-        theme: "html"
+        theme: "bootstrap2"
+        disable_collapse: true
+        disable_edit_json: true
+        collapsed: true
 
     editor.addClass "templateElement"
 
