@@ -13,6 +13,6 @@ llist =
                 type: "string"
                 format:"textarea"
     default: [
-        list_title: "List TItle"
-        list_content: "List Content"
+        list_title: ""
+        list_content: ""
     ]

@@ -32,7 +32,7 @@ slideshow =
                                 type: "string"
                                 format:"textarea"
             default:
-                url: "URL"
+                url: ""
                 caption:
-                    caption_title: "Caption Title"
-                    caption_text: "Caption Text"
+                    caption_title: ""
+                    caption_text: ""

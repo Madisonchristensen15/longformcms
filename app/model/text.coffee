@@ -123,12 +123,12 @@ text =
                             "scale"
                         ]
             default: [
-                url: "URL"
+                url: ""
                 image_position: "left"
                 image_width: "col-4-12"
                 caption:
-                    caption_title: "Caption Title"
-                    caption_text: "Caption Text"
+                    caption_title: ""
+                    caption_text: ""
                 animationType: "slideDown"
             ]
         videos:
@@ -191,12 +191,12 @@ text =
                             "scale"
                         ]
             default: [
-                youtube_id: "URL"
+                youtube_id: ""
                 video_position: "left"
                 video_width: "col-4-12"
                 caption:
-                    caption_title: "Caption Title"
-                    caption_text: "Caption Text"
+                    caption_title: ""
+                    caption_text: ""
                 animationType: "slideDown"
             ]
 
@@ -251,9 +251,9 @@ text =
                         type: "string"
                         format:"textarea"
             default: [
-                url: "URL"
+                url: ""
                 info_position: "left"
                 info_width: "col-4-12"
-                info_title: "Info Title"
-                info_content: "Info Text"
+                info_title: ""
+                info_content: ""
             ]

@@ -8,6 +8,10 @@
         display: inline-block !important;
         width: 160px;
         vertical-align: top;
+
+        input {
+            height: inherit;
+        }
     }
 
     select {
@@ -27,11 +31,10 @@
         margin: 8px 24px 0 0;
         height: 30px;
         border: 1px outset;
-        border-radius: 3px;
+        border-radius: 5px;
         background-color: #f5f5f5;
         color: #555;
         font-size: 14px;
-        font-weight: 
     }
 
     button:hover {
