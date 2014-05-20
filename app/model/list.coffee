@@ -1,8 +1,9 @@
-llist =
+list =
     title: "List"
     type: "array"
     uniqueItems: true
     items:
+        title: "List"
         type: "object"
         properties:
             list_title:

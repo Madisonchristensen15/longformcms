@@ -136,6 +136,7 @@ text =
             type: "array"
             uniqueItems: true
             items:
+                title: "Video"
                 type: "object"
                 properties:
                     youtube_id:
@@ -205,6 +206,7 @@ text =
             type: "array"
             uniqueItems: true
             items:
+                title: "Info"
                 type: "object"
                 properties:
                     url:

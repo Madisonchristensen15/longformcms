@@ -14,6 +14,7 @@ slideshow =
             type: "array"
             uniqueItems: true
             items:
+                title: "Slide"
                 type: "object"
                 properties:
                     url:
