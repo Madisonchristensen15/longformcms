@@ -18,6 +18,8 @@
     "handlebars": "1.3.0",
     "jQuery": "1.10.0",
     "Simple-Grid": "ThisIsDallas/Simple-Grid",
-    "json-editor": "*"
+    "json-editor": "*",
+    "bootstrap": "*",
+    "summernote": "*"
   }
 }

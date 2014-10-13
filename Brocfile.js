@@ -45,7 +45,9 @@ appJs = compileES6(mergeTrees([app, bower]), {
         "fastclick/lib/fastclick.js",
         "handlebars/handlebars.js",
         "jQuery/jquery.js",
-        "json-editor/dist/jsoneditor.js"
+        "json-editor/dist/jsoneditor.js",
+        "bootstrap/dist/js/bootstrap.js",
+        "summernote/dist/summernote.min.js"
     ],
     wrapInEval: false,
     outputFile: "/assets/app.js"

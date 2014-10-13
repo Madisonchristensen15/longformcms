@@ -63,4 +63,7 @@ afterDrop = (dragElement, sortElement) ->
 
     cmseditor.addClass "templateElement"
 
+    $(".row-fluid .control-group .controls textarea").summernote
+        height: 300
+
 `export default init`
