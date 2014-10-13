@@ -3,6 +3,11 @@
 
 # `import $ from "app/helpers/selector"`
 
+`import bigImageModel from "app/model/big_image"`
+`import textModel from "app/model/text"`
+
+`import { editor } from "app/editor"`
+
 `import applicationTemplate from "app/templates/application"`
 `import dashboardTemplate from "app/templates/dashboard"`
 
@@ -23,7 +28,8 @@ init = ->
 
     $("#action").click (e) ->
         e.preventDefault()
-        save()
+        editor.save()
+        $("#jsonOutput").html(editor.getEditorValue())
 
     $("#thumbnailWrapper div").draggable
         helper: ->
@@ -37,45 +43,24 @@ init = ->
         placeholder: "placeholder"
 
         receive: (e, ui) ->
-            console.log ui.item.attr "id"
-            mimi = afterDrop(ui.item, $(this).data().uiSortable.currentItem, bigImage)
+            afterDrop(ui.item, $(this).data().uiSortable.currentItem)
 
-save = ->
-    objectArr = []
-
-    $("form").each ->
-        textobjForm = $(this).serializeArray()
-
-        textobj = {}
-
-        $.each textobjForm, (i, v) ->
-            textobj[v.name] = v.value
-
-        objectArr.push(textobj)
-    
-    jsonstring = JSON.stringify(objectArr)
-
-    $("#jsonOutput").html(jsonstring)
-
-afterDrop = (dragElement, sortElement, schema) ->
-
+afterDrop = (dragElement, sortElement) ->
     switch dragElement.attr "id"
         when "i1"
-            sortElement.html(textTemplate())
+            schema = bigImageModel
         when "i2"
-            sortElement.html(quoteTemplate())
+            schema = textModel
 
     sortElement.addClass("dummyClass", 700, "swing")
 
-    editor = sortElement.jsoneditor
+    cmseditor = sortElement.jsoneditor
         schema: schema
         theme: "bootstrap2"
-        disable_collapse: true
+        # disable_collapse: true
         disable_edit_json: true
         collapsed: true
 
-    editor.addClass "templateElement"
-
-    return editor
+    cmseditor.addClass "templateElement"
 
 `export default init`

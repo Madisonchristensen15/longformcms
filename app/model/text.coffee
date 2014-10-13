@@ -259,3 +259,5 @@ text =
                 info_title: ""
                 info_content: ""
             ]
+
+`export default text`

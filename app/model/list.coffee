@@ -17,3 +17,5 @@ list =
         list_title: ""
         list_content: ""
     ]
+
+`export default list`

@@ -1,6 +1,8 @@
 bigImage =
     title: "Big Image"
     type:"object"
+    options:
+        collapsed: true
     properties:
         url:
             title: "URL"
@@ -53,3 +55,5 @@ bigImage =
                         "fade02"
                         "scale"
                     ]
+
+`export default bigImage`
