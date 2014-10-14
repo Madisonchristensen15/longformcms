@@ -1,0 +1,16 @@
+<section id="sections">
+    <h2>Longform Sections</h2>
+
+    <div class="sortableSections">
+        {{#each sections}}
+            <div id="{{id}}">
+                <p>{{description}}</p>
+                <div class="delete"></div>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="center">
+        <a href="javascript:;" id="new">+ New Section</a>
+    </div>
+</section>
