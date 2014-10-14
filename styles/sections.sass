@@ -1,0 +1,41 @@
+#viewport
+    #sections
+        .sortableSections
+            > div
+                width: 650px
+                height: 150px
+                background-color: #ccc
+                margin: 20px auto
+                text-align: center
+
+                &.sortableHelper
+                    background-color: #eee
+
+                &.new
+                    display: none
+
+                .delete
+                    position: relative
+                    left: 635px
+                    bottom: 25px
+                    background-color: #333
+                    width: 25px
+                    height: 25px
+                    border-radius: 30px
+                    cursor: pointer
+                    display: none
+
+                    &.show
+                        display: inline-block
+
+        .center
+            width: 100%
+            height: 100%
+            margin: 0 auto 20px
+            text-align: center
+
+            #new
+                display: inline-block
+                background-color: #ccc
+                padding: 20px
+                color: #333

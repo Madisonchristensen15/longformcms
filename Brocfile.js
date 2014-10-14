@@ -33,16 +33,15 @@ styles = pickFiles(styles, {
 });
 
 // Compile Sass
-appCss = compileSass([styles], "app/main.scss", "assets/main.css");
+appCss = compileSass([styles], "app/main.sass", "assets/main.css");
 
 // Compile ES6 modules
 appJs = compileES6(mergeTrees([app, bower]), {
     loaderFile: "loader.js/loader.js",
     inputFiles: [
-        "app/*.js"
+        "app/**/*.js"
     ],
     legacyFilesToAppend: [
-        "fastclick/lib/fastclick.js",
         "handlebars/handlebars.js",
         "jQuery/jquery.js",
         "json-editor/dist/jsoneditor.js"
