@@ -44,6 +44,7 @@ appJs = compileES6(mergeTrees([app, bower]), {
     legacyFilesToAppend: [
         "handlebars/handlebars.js",
         "jQuery/jquery.js",
+        "fancybox/source/jquery.fancybox.js",
         "json-editor/dist/jsoneditor.js"
     ],
     wrapInEval: false,

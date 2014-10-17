@@ -1,0 +1,38 @@
+<section id="pages">
+    <h2>Edit Longform</h2>
+    <div class="container">
+        <div style="text-align:center;">
+            <input type="text" value="{{title}}" placeholder="Titel" id="title">
+        </div>
+
+        <hr>
+
+        <div class="grid">
+                <div>
+                    <div class="image"><a href="javascript:;" id="newPage">+ Neue Seite</a></div>
+                </div>
+            {{#each pages}}
+                {{!-- <div>
+                    <div class="image"><img src="/images/icons/type_icon_standard.png"/></div>
+                    <div class="caption">{{title}}</div>
+                </div> --}}
+                {{> page}}
+
+                {{!-- <div>
+                    <div class="image"><img src="/images/icons/type_icon_standard.png"/></div>
+                    <div class="caption">asd</div>
+                </div>
+
+                <div>
+                    <div class="image"><img src="/images/icons/type_icon_standard.png"/></div>
+                    <div class="caption">dasdds</div>
+                </div>
+
+                <div>
+                    <div class="image"><img src="/images/icons/type_icon_standard.png"/></div>
+                    <div class="caption">asdsad</div>
+                </div> --}}
+            {{/each}}
+        </div>
+    </div>
+</section>

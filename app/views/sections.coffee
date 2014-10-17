@@ -1,5 +1,11 @@
 `import store from "app/store"`
 
+hover = ->
+    $(".sortableSections div").hover ->
+        $(@).find("> div").show()
+    , ->
+        $(@).find("> div").hide()
+
 createSortable = (parent) ->
     parent.sortable
         placeholder: "sortableHelper"
@@ -10,9 +16,18 @@ createSortable = (parent) ->
     parent.disableSelection()
 
 createNewSection = (parent, count) ->
-    parent.append("<div class=\"new\">Sektion #{count}</div>")
+    obj =
+        description: "Hallo Welt!"
+
+    newSection = require("app/templates/_section").default obj
+    newSection = $(newSection)
+    newSection.addClass "new"
+    parent.append(newSection).last()
+
     # Better animation needed
     $(".new").fadeIn()
+
+    hover()
 
 sections =
     sectionArray: []
@@ -22,17 +37,15 @@ sections =
     init: ->
         createSortable $(@parent)
 
-        $("#new").click =>
-            createNewSection $(@parent), ++@sectionCount
+        # $("#new").click =>
+        #     createNewSection $(@parent), ++@sectionCount
 
-        $(".sortableSections div").hover ->
-            $(@).find("> div").show()
-        , ->
-            $(@).find("> div").hide()
+        hover()
 
-        $(".delete").click ->
-            $(@).parent().fadeOut 500, ->
-                $(@).remove()
+        # $(".delete").click ->
+        #     console.log "delete"
+        #     $(@).parent().fadeOut 500, ->
+        #         $(@).remove()
 
     getSections: ->
         testArray = []

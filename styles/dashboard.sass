@@ -4,16 +4,105 @@
 			position: relative
 			width: 900px
 			height: 100%
-			background-color: #eee
-			margin: 30px auto
+			background-color: #007abf
+			margin: 50px auto
 			box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
+			border-radius: 5px
 			// box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 
 			.type
-				width: 300px
-				height: 200px
-				margin: 45px 75px
+				width: 260px
+				height: 260px
+				// margin: 45px 95px
 				background-color: #fff
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+				// cursor: pointer
+				border: 1px solid #333
+
+			.standard
+				background-image: url(/images/icons/type_icon_standard.png)
+				background-size: 100% 100%
+
+			.deluxe
+				background-image: url(/images/icons/type_icon_deluxev2.png)
+				background-size: 100% 100%
+
+			.tile
+				background-image: url(/images/icons/type_icon_tiles.png)
+				background-size: 100% 100%
+
+			.soundslide
+				background-image: url(/images/icons/type_icon_soundslides.png)
+				background-size: 100% 100%
+
+
+			.flip-container
+				perspective: 1000
+				-webkit-perspective: 1000
+				-ms-perspective: 1000
+
+				-moz-transform: perspective(1000px)
+				transform-style: preserve-3d
+
+				-ms-transform: perspective(1000px)
+				-ms-transform-style: preserve-3d
+
+				width: 260px
+				height: 260px
+				margin: 45px 95px
 				display: inline-block
 				float: left
-				box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
+
+				/** IE hack for the flip to work - seperate class? file? **/
+				// &:hover .flipper .back
+				// 	transform: rotateY(0deg)
+
+				// &:hover .flipper .front
+				// 	transform: rotateY(180deg)
+
+				&:hover .flipper, &.hover .flipper
+					-webkit-transform: rotateY(180deg)
+					transform: rotateY(180deg)
+
+				.flipper
+					-webkit-transition: 0.6s
+					-webkit-transform-style: preserve-3d
+					transition: 0.6s
+					transform-style: preserve-3d
+					position: relative
+
+					.front, .back
+						-webkit-backface-visibility: hidden
+						-moz-backface-visibility: hidden
+						-ms-backface-visibility: hidden
+						backface-visibility: hidden
+
+						transition: 0.6s
+						transform-style: preserve-3d
+
+						width: 260px
+						height: 260px
+						position: absolute
+						top: 0
+						left: 0
+
+					.front
+						z-index: 2
+						-webkit-transform: rotateY(0deg)
+						-ms-transform: rotateY(0deg)
+						transform: rotateY(0deg)
+
+					.back
+						-webkit-transform: rotateY(180deg)
+						-ms-transform: rotateY(180deg)
+						transform: rotateY(180deg)
+
+						h3, p, a.button
+							margin: 20px
+						
+						p
+							font-size: 14px
+
+						a.button
+							margin-top: 20px
+							float: right

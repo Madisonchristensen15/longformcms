@@ -3,3 +3,59 @@ body
 
 h2
     font-size: 30px
+
+h3
+    font-size: 18px
+
+a
+    &.button
+        padding: 10px 20px
+        background-color: #007abf
+        color: #fff
+        display: inline-block
+        border-radius: 5px
+
+.grid
+    > div
+        width: 200px
+        height: 200px
+        display: inline-block
+        float: left
+        margin: 45px
+
+        &:nth-child(3n+1)
+            margin-left: 0
+
+        &:nth-child(3n+3)
+            margin-right: 0
+
+        &.longform
+            cursor: pointer
+
+        .image
+            text-align: center
+
+            img
+                width: 150px
+                height: 150px
+                border: 1px solid black
+
+            a
+                line-height: 150px
+
+        .caption
+            margin-top: 20px
+            text-align: center
+
+// Temporary
+#layout
+    width: 360px
+
+    .fischi
+        display: inline-block
+        float: left
+        margin: 10px 10px
+
+        img
+            width: 160px
+            height: 100px
