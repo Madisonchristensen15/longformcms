@@ -3,8 +3,15 @@
 
 # `import $ from "app/helpers/selector"`
 
-`import bigImageModel from "app/model/big_image"`
-`import textModel from "app/model/text"`
+#`import bigImageModel from "app/model/big_image"`
+#`import textModel from "app/model/text"`
+
+`import type01Model from "app/model/layoutType01"`
+`import type02Model from "app/model/layoutType02"`
+`import type03Model from "app/model/layoutType03"`
+`import type04Model from "app/model/layoutType04"`
+`import type05Model from "app/model/layoutType05"`
+`import type06Model from "app/model/layoutType06"`
 
 `import { editor } from "app/editor"`
 
@@ -19,13 +26,14 @@ init = ->
     # FastClick.attach document.body
 
     # Render and insert application
+
     document.body.insertAdjacentHTML "afterbegin", applicationTemplate()
 
     # Render and insert templates
     $("#viewport").append dashboardTemplate()
     # $("#viewport").insertAdjacentHTML "beforeend", headerTemplate()
     # $("#viewport").insertAdjacentHTML "beforeend", frontTemplate(context)
-
+        
     $("#action").click (e) ->
         e.preventDefault()
         editor.save()
@@ -48,9 +56,17 @@ init = ->
 afterDrop = (dragElement, sortElement) ->
     switch dragElement.attr "id"
         when "i1"
-            schema = bigImageModel
+            schema = type01Model
         when "i2"
-            schema = textModel
+            schema = type02Model
+        when "i3"
+            schema = type03Model
+        when "i4"
+            schema = type04Model
+        when "i5"
+            schema = type05Model
+        when "i6"
+            schema = type06Model
 
     sortElement.addClass("dummyClass", 700, "swing")
 
@@ -63,7 +79,14 @@ afterDrop = (dragElement, sortElement) ->
 
     cmseditor.addClass "templateElement"
 
-    $(".row-fluid .control-group .controls textarea").summernote
-        height: 300
+    # $(sortElement).find(".container-text textarea").summernote
+    #     height: 300
+
+    $(sortElement).find(".container-text textarea").sceditor
+        plugins: "bbcode"
+        style: "/SCEditor/minified/jquery.sceditor.default.min.css"
+        toolbar: "bold,italic,underline,strike,superscript,left,center,right,justify,font,size,color,removeformat,bulletlist,orderedlist,table,code,quote,image,email,link,unlink,youtube,date,time,ltr,rtl,print,maximize,source"
+        autofocus: true
+        autoUpdate: true
 
 `export default init`

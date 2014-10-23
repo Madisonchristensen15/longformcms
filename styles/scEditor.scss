@@ -1,0 +1,169 @@
+.sceditor-button {
+    font-family: "Font Awesome";
+}
+
+.sceditor-button-youtube div:before { content: "\f167 "; }
+.sceditor-button-unlink div:before { content: "\f127 "; }
+.sceditor-button-underline div:before { content: "\f0cd "; }
+.sceditor-button-time div:before { content: "\f017 "; }
+.sceditor-button-table div:before { content: "\f0ce "; }
+.sceditor-button-superscript div:before { content: "\f12b "; }
+.sceditor-button-subscript div:before { content: "\f12c "; }
+.sceditor-button-strike div:before { content: "\f0cc "; }
+.sceditor-button-source div:before { content: "\f1c9 "; }
+.sceditor-button-size div:before { content: "\f034 "; }
+.sceditor-button-rtl div:before { content: "\f03b "; }
+.sceditor-button-right div:before { content: "\f038 "; }
+.sceditor-button-removeformat div:before { content: "\f014 "; }
+.sceditor-button-quote div:before { content: "\f10d "; }
+.sceditor-button-print div:before { content: "\f02f "; }
+.sceditor-button-pastetext div:before { content: "\f0f6 "; }
+.sceditor-button-paste div:before { content: "\f0ea "; }
+.sceditor-button-orderedlist div:before { content: "\f0cb "; }
+.sceditor-button-maximize div:before { content: "\f0b2 "; }
+.sceditor-button-ltr div:before { content: "\f03c "; }
+.sceditor-button-link div:before { content: "\f0c1 "; }
+.sceditor-button-left div:before { content: "\f036 "; }
+.sceditor-button-justify div:before { content: "\f039 "; }
+.sceditor-button-italic div:before { content: "\f033 "; }
+.sceditor-button-image div:before { content: "\f1c5 "; }
+.sceditor-button-horizontalrule div:before { content: "\f068 "; }
+.sceditor-button-format div:before { content: "\e01c "; }
+.sceditor-button-font div:before { content: "\f031 "; }
+.sceditor-button-emoticon div:before { content: "\f118 "; }
+.sceditor-button-email div:before { content: "\f003 "; }
+.sceditor-button-bold div:before { content: "\f032 "; }
+.sceditor-button-date div:before { content: "\f073 "; }
+.sceditor-button-cut div:before { content: "\f0c4 "; }
+.sceditor-button-copy div:before { content: "\f0c5 "; }
+.sceditor-button-color div:before { content: "\f1fc "; }
+.sceditor-button-code div:before { content: "\f121 "; }
+.sceditor-button-center div:before { content: "\f037 "; }
+.sceditor-button-bulletlist div:before { content: "\f0ca "; }
+
+div.sceditor-grip { 
+    background-image: url(famfamfam.png); 
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3; 
+}
+
+.rtl div.sceditor-grip { 
+    background-image: url(famfamfam.png);
+    background-repeat: no-repeat; 
+    position: absolute;
+}
+
+.sceditor-container {
+    width: 100% !important;
+    border: 1px solid #ccc;
+
+    .sceditor-toolbar {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+        height: 33px;
+
+        .sceditor-group {
+            display: inline-block;
+            padding: 6px 8px;
+            border-right: 1px solid #ccc;
+
+            .sceditor-button {
+                display: block;
+                float: left;
+                cursor: pointer;
+                width: 18px;
+                height: 20px;
+
+                div {
+                    overflow: hidden;
+                    width: 18px;
+                    height: 20px;
+                    text-align: center;
+                }
+
+                div:before {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    iframe {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+div.sceditor-dropdown {
+    position: absolute;
+    margin-top: 26px !important;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    padding: 4px;
+    z-index: 4;
+    line-height: 1;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+    box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+
+    div {
+        z-index: 3;
+        padding: 0;
+        margin: 0;
+
+        .sceditor-color-column {
+            float: left;
+
+            .sceditor-color-option {
+                display: block;
+                border: 1px solid #fff;
+                height: 12px;
+                width: 12px;
+                overflow: hidden;
+            }
+
+            .sceditor-color-option:hover {
+                border: 1px solid #333;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 4px;
+        }
+
+        label {
+            display: block;
+            padding: 4px 0 0 0;
+        }
+
+        input {
+            width: 100%;
+            margin: 0 0 4px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+        }
+
+        input:hover {
+            background-color: #fff;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}
